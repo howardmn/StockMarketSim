@@ -1,0 +1,276 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset129 Malgun Gothic;}{\f2\fnil Calibri;}{\f3\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\qc\f0\fs32\lang9 CSIS 294: PROJECT 1\par
+
+\pard\fs22\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li450\b SUMMARY\par
+
+\pard\b0\par
+This project will simulate the stock market.  This "sim" will include a trading account that tracks balance and stock holdings, and it will include a stock market engine that will mimic the up and down movement of stocks.  It will also mimic the queue of requested trades that then get periodically resolved in bulk batches in order of trade placement.\par
+\par
+This project will involve the following:\par
+
+\pard\fi630\li90 - Inheritance\par
+- Queue\par
+- Random number generation for simulations\par
+- Composite objects.\f1\lang1042\par
+\f0\lang9\par
+
+\pard\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li450\b DETAILS\par
+
+\pard\li720\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b 8 classes required\'85\par
+
+\pard\li1440\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b Account \b0\f2\endash\f0  base class for different account types\b\par
+
+\pard\li720\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 username\par
+{\pntext\f3\'B7\tab}password\par
+
+\pard\li1440\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810 TradingAccount \b0\f2\endash\f0  a specific type of account that carries a trading account balance and current stocks held.\b\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080 Inherits\b0  from Account class.\par
+{\pntext\f3\'B7\tab}\ul Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 balance \'85 float type\par
+{\pntext\f3\'B7\tab}stockPositions \'85 array of StockPosition type.\par
+
+\pard\li1440\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b StockPosition\b0  \f2\endash\f0  Keeps track of a stock as far as amount of shares held.\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul Instance\ulnone  \ul variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 stockSymbol\par
+{\pntext\f3\'B7\tab}shareCount \'85 int type\par
+
+\pard\par
+\par
+
+\pard\li810\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810 TradeNode \b0\f2\endash\f0  This holds details of a pending stock trade and is stored in a queue until execution\b\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 stockSymbol\par
+{\pntext\f3\'B7\tab}shareCount\par
+{\pntext\f3\'B7\tab}buy \'85 boolean type\par
+{\pntext\f3\'B7\tab}nextTradeNode \'85 TradeNode type\par
+
+\pard\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b TradeQueue \b0\f2\endash\f0  This manages the pending trade nodes in a queue for the StockMarketSim class\b\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 headTradeNode\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 First/next TradeNode in line.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 tailTradeNode\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Last TradeNode in line\par
+
+\pard\li1800\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul Methods\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 enqueue \f2\endash\f0  Creates and adds a new TradeNode to end of queue.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Parameters as input.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070 sStockSymbol\par
+{\pntext\f3\'B7\tab}iPurchaseShareCount\par
+{\pntext\f3\'B7\tab}bBuy \'85 this is true or false depending on buying or selling.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Creates new TradeNode and sets instance variables on that object.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070 If current headTradeNode is null then set both headTradeNode and tailTradeNode to this new TradeNode.\par
+{\pntext\f3\'B7\tab}Else \par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li2520 Assign this new TradeNode to the tailTradeNode\rquote s nextTradeNode variable.\par
+{\pntext\f3\'B7\tab}Then assign the new TradeNode to the tailTradeNode variable.\par
+{\pntext\f3\'B7\tab}NOTE: #1 above adds the new node to the end of the line by chaining it to the current end of line tail node.  #2 above then switches the variable of tailTradeNode to point to the one you just added.  The object that was the tail trade node before #2 is still there in memory because it\rquote s referenced by the node ahead of it.  We just no longer have a direct reference to it as it\rquote s now in the middle of the line somewhere, and we have a new tail or end of line node.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 dequeue \f2\endash\f0  This returns the head TradeNode (the next in line) and makes the second in the queue now the first in line.\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800\b0 Parameters as input.\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070\b0 None\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800\b0 If current headTradeNode is null, then return null.\b\par
+{\pntext\f3\'B7\tab}\b0 Else\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070\b0 Creates temporary new TradeNode object and assigns the current headTradeNode to it.\b\par
+{\pntext\f3\'B7\tab}\b0 Assigns headTradeNode.nextTradeNode to headTradeNode.\b\par
+{\pntext\f3\'B7\tab}\b0 Returns the temporary TradeNode object to method caller.\b\par
+
+\pard\par
+
+\pard\li720\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810 Stock \b0\f2\endash\f0  Simply holds a stock symbol and price for the stock engine\b\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Instance variable\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 stockSymbol\par
+{\pntext\f3\'B7\tab}pricePerShare \'85 int type\par
+{\pntext\f3\'B7\tab}lastMoveUp \'85 boolean type\par
+
+\pard\li810\b\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810 StockEngine\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Constructor\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 Instantiates a new Random class and places in instance variable.\par
+{\pntext\f3\'B7\tab}Initializes at least 3 stock objects with stock symbols and uses the rand object to generate beginning prices.\par
+{\pntext\f3\'B7\tab}Instantiates and fills stocks instance array in this class with these 3 stock objects.\par
+
+\pard\li1440\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 rand - Random object instantiated in constructor.\par
+{\pntext\f3\'B7\tab}stocks \f2\endash\f0  array of all stocks in this stock market.\par
+
+\pard\li1440\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul Methods\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 cycleTurn \f2\endash\f0  This goes through each stock in the array and adjusts the price due to a random number algorithm.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Adjusts each stock in array using nextInt method on random object that limits moves to 3 or under.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070 Algorithm for creating random up or down will be reviewed in class.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li2520 This algorithm must make it more likely for stock to go the same way (up or down) as the last move it made (stored in lastMoveUp).  This allows for a stock to trend, rather than completely switching up to down and back every turn and not moving very much.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Sets the lastMoveUp variable of each stock based on up or down move.\par
+{\pntext\f3\'B7\tab}Prints out current stock symbols and their values once adjusted.\par
+{\pntext\f3\'B7\tab}No input params to method nor returns values back to method caller.\par
+
+\pard\b\par
+\par
+
+\pard\li1080\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b StockMarketSim\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul\b0 Instance variables\ulnone :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 tradingAccount\par
+{\pntext\f3\'B7\tab}tradeQueue\par
+{\pntext\f3\'B7\tab}stockEngine\par
+
+\pard\li1440\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\ul Methods\ulnone :\par
+
+\pard\li1440\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 start - Does all the following:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Instantiates all instance variables of this class.\par
+{\pntext\f3\'B7\tab}Initializes any values in those classes that are required for functionality, such as initial values for tradingAccount object.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070 NOTE: Only one tradingAccount is being created for this project to keep it simple.\par
+{\pntext\f3\'B7\tab}NOTE: tradingAccount\rquote s stockPositions array should be instantiated to a size of 3, one for each of the three stocks you created in StockEngine.  And initialize the instance variables on each of the three objects for the array with stock symbol for each and shareCount set to 0.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Calls runUI method.\par
+
+\pard       \par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 runUI - Does all the following:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Runs a menu loop until user types in "exit" or balance is less than 1 in account.\par
+{\pntext\f3\'B7\tab}Menu Loop: Gives user menus with numbers for each choice, and each menu\rquote s functionality is detailed here:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070\b Account\b0  \b status\b0 .\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li2520 Displays all info in tradingAccount.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070\b Trade\b0  \b stocks\b0 .\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li2520\ldblquote Which stock do you want to buy/sell?\rdblquote  (get input)\par
+{\pntext\f3\'B7\tab}\ldblquote How many shares?\rdblquote  (get input)\par
+{\pntext\f3\'B7\tab}\ldblquote Buy or sell?\rdblquote  (get input)\par
+{\pntext\f3\'B7\tab}Call enqueue on tradeQueue object passing in inputs gathered from user.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070\b Cycle\b0  \b Stock\b0  \b Market\b0 !\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li2520 Calls cycleTurn on stockEngine.  (This is done before processTrades so user isn\rquote t always getting precisely the price he/she wants to make more challenging.)\par
+{\pntext\f3\'B7\tab}Calls processTrades in this class.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 After loop exit, shows ending balance and Sim-ending message.\par
+
+\pard\li2070\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1440 processTrades \f2\endash\f0  Does all the following:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li1800 Processes all nodes in tradeQueue using dequeue method on tradeQueue.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li2070 This method must properly figure out sell or buy, calculate number of shares and current stock price, and adjust both tradingAccount balance and stockPositions instance values.\par
+
+\pard       \par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b StockMarketSim_Test\par
+
+\pard\li810\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-180\li1080\b0 One main method that instantiates and starts a StockMarketSim instance.\par
+
+\pard         \par
+  \par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li450\b NOTES\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li810\b0 We will go over a queue in class.\par
+{\pntext\f3\'B7\tab}We will go over algorithm for allowing stocks to trend one direction to avoid chaotic up/down every turn.\par
+
+\pard   \par
+  \par
+TURNING IN LAB: \par
+\par
+In Blackboard, simply click on assignments and then clicking on Project 1 will allow you to turn in the lab files.\par
+\b IMPORTANT\b0 : \b DO NOT ZIP\b0  your files please.  \par
+Turn in \b just the raw\b0  \b .java\b0  files for this lab.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+
+\pard\tx7509\tab\par
+}
+ 
