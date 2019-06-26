@@ -8,3 +8,11 @@ This project will involve the following:
 - Queue
 - Random number generation for simulations
 - Compsite Objects
+- An algorithm that allows stocks to trend in one direction to avoid chaotic up/down every turn
+
+What I learned: 
+- Creating instance variables
+- Using inheritance from Account class
+- Using array for stock positions
+- Storing pending stock trade in queue until execution
+- Using constructors
